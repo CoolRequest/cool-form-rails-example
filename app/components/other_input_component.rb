@@ -1,0 +1,3 @@
+class OtherInputComponent < InputComponent
+  
+end

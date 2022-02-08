@@ -1,5 +1,7 @@
-<h1>Example heading <span class="badge bg-secondary">New</span></h1>
-
 <%= cool_form_with(model: post) do |cool_form| %>
    <%= cool_form.input(:title) %>
+
+   <%= cool_form.input(:content, component_name: 'other_input_component') %>
+   
+   <%= cool_form.submit %>
 <% end %>
