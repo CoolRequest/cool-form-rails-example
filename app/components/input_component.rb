@@ -1,8 +1,8 @@
 class InputComponent < ViewComponent::Base
-  def initialize(form:, field:, **input_args)
-    @form = form
-    @field = field
-    @input_args = input_args
+  def initialize(**args)
+    @form = args.delete(:form)
+    @field = args.delete(:field)
+    @input_args = args
   end
 
   def has_error?
