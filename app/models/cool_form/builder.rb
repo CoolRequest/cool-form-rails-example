@@ -15,7 +15,8 @@ module CoolForm
       { 
         default_components: {
           string: InputComponent,
-          text: TextAreaComponent
+          text: TextAreaComponent,
+          select: SelectComponent
         }
       }
     end

@@ -2,6 +2,9 @@
    
    <%= cool_form.input(:name, value: 'name') %>
    <%= cool_form.input(:birth_date, data: { bla: 'blergh' }) %>
+
+   <%= cool_form.input(:type, as: :select, collection: [['Servidor', 1], ['Estagiário', 2]]) %>
+
    <%= cool_form.submit %>
 
 <% end %>

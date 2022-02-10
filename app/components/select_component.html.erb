@@ -1,0 +1,9 @@
+<div class="mb-3">
+  
+  <%= @form.label @field, class: 'form-label' %>
+  <%= @form.select @field, @choices, @input_args %>
+  
+  <% if has_error? %>
+  <div class='text-danger'><%= error_text %></div>
+  <% end %>
+</div>
