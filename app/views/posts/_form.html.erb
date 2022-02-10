@@ -1,7 +1,8 @@
 <%= cool_form_with(model: post) do |cool_form| %>
    <%= cool_form.input(:title) %>
 
-   <%= cool_form.input(:content, component_name: 'other_input_component') %>
+   <%= cool_form.input(:content, as: :text) %>
    
    <%= cool_form.submit %>
 <% end %>
+

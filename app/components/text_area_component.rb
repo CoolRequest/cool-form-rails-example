@@ -1,0 +1,3 @@
+class TextAreaComponent < InputComponent
+  
+end

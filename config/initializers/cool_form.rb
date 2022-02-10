@@ -7,3 +7,5 @@
 # puts CoolForm.class
 
 # CoolForm.configure
+
+# puts Post.first

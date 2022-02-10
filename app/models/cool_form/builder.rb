@@ -1,5 +1,4 @@
 module CoolForm
-  include ActiveSupport::Configurable
 
   class Builder < ActionView::Helpers::FormBuilder
     def input(field, as: :string, **input_args)
@@ -11,14 +10,19 @@ module CoolForm
 
     private
 
-    def get_component(as)
-      puts "config: #{config}"
-      InputComponent
-      # config[as]
+    # Transformar isso em ActiveSupport::Configurable quando migrar o código para a gem
+    def config
+      { 
+        default_components: {
+          string: InputComponent,
+          text: TextAreaComponent
+        }
+      }
     end
 
-    def default_component_for_field_type(field)
-      InputComponent
+    def get_component(as)
+      config[:default_components][as]
     end
+
   end
 end
