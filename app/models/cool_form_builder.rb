@@ -3,8 +3,10 @@ class CoolFormBuilder
     @form = form
   end
 
-  def input(field, component_name: nil)
-    component = get_component(field, component_name)
+  def input(field, component_name: nil, **input_args)
+    component_class = get_component(field, component_name)
+    component = component_class.new(form: @form, field: field, **input_args)
+
     ActionController::Base.render(component)
   end
 
@@ -19,13 +21,11 @@ class CoolFormBuilder
   private
 
   def get_component(field, component_name)
-    klass = if component_name.blank?
-              default_component_for_field_type(field)
-            else
-              component_name.camelize.constantize
-            end
-    
-    klass.new(form: @form, field: field)
+    if component_name.blank?
+      default_component_for_field_type(field)
+    else
+      component_name.camelize.constantize
+    end
   end
 
   def default_component_for_field_type(field)

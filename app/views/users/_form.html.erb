@@ -1,0 +1,7 @@
+<%= cool_form_with(url: users_path, scope: 'user', method: :post) do |cool_form| %>
+   
+   <%= cool_form.input(:name, value: 'name') %>
+   <%= cool_form.input(:birth_date, data: { bla: 'blergh' }) %>
+   <%= cool_form.submit %>
+
+<% end %>

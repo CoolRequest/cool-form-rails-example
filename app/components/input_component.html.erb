@@ -1,6 +1,8 @@
 <div class="mb-3">
+  
   <%= @form.label @field, class: 'form-label' %>
-  <%= @form.text_field @field, class: 'form-control' %>
+  <%= @form.text_field @field, @input_args %>
+  
   <% if has_error? %>
   <div class='text-danger'><%= error_text %></div>
   <% end %>
