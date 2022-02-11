@@ -1,3 +1,9 @@
+PATH
+  remote: ..
+  specs:
+    cool_form (0.1.0)
+      rails (>= 7.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -194,6 +200,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  cool_form!
   cssbundling-rails
   debug
   jbuilder
